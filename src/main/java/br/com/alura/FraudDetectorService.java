@@ -58,11 +58,14 @@ public class FraudDetectorService {
             properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
             properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
 
-            //Corrção InvalidropExceptions
+            //Correção InvalidropExceptions
             properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG,FraudDetectorService.class.getSimpleName());
 
-            //Nome para o consumidor
+            //Nome para o consumidor grupo - Configurar no docker
             properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG, FraudDetectorService.class.getSimpleName() + "-" +UUID.randomUUID().toString());
+
+            //Consumir mensagens 1 em 1 - Configurar no docker
+            properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG,"1");
 
             return properties;
         }
