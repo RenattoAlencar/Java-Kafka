@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af69ccb-a292-4646-a081-8ccb7e0d4219" name="Changes" comment="Kafka consumer fraude.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/LogService.java" afterDir="false" />
+    <list default="true" id="4af69ccb-a292-4646-a081-8ccb7e0d4219" name="Changes" comment="Varios consumdores, produtores e LOG ouvindo os Topicos.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/NewOrderMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/NewOrderMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +46,22 @@
       <recent name="br.com.alura" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NewOrderMain">
+  <component name="RunManager" selected="Application.FraudDetectorService (1)">
     <configuration name="EmailService" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.alura.EmailService" />
+      <module name="ecomerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.alura.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FraudDetectorService (1)" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.alura.FraudDetectorService" />
       <module name="ecomerce" />
       <extension name="coverage">
         <pattern>
@@ -101,6 +112,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.EmailService" />
+      <item itemvalue="Application.FraudDetectorService" />
+      <item itemvalue="Application.FraudDetectorService (1)" />
+      <item itemvalue="Application.LogService" />
+      <item itemvalue="Application.NewOrderMain" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -125,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658007465051</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Varios consumdores, produtores e LOG ouvindo os Topicos.">
+      <created>1658086245118</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658086245118</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +167,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Configuração Kafka e POM" />
     <MESSAGE value="Configuração Docker Compose" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuração Docker Compose" />
+    <MESSAGE value="Varios consumdores, produtores e LOG ouvindo os Topicos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Varios consumdores, produtores e LOG ouvindo os Topicos." />
   </component>
 </project>
