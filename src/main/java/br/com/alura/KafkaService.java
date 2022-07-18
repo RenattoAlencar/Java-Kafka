@@ -7,19 +7,31 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import java.io.Closeable;
 import java.time.Duration;
 import java.util.Collections;
+import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
-public class KafkaService implements Closeable {
-    private final KafkaConsumer<String, String> consumer;
+public class KafkaService<T> implements Closeable {
+    private final KafkaConsumer<String, T> consumer;
     private final ConsumerFunction parse;
 
-    public KafkaService(String groupId, String topic, ConsumerFunction parse) {
-        this.parse = parse;
-        this.consumer = new KafkaConsumer<>(properties(groupId));
+    public KafkaService(String groupId, String topic, ConsumerFunction parse, Class<T> type, Map<String, String> properties) {
+        this(parse, groupId, type, properties);
 
         //Consumir mensagem do Topico com uma Lista
         consumer.subscribe(Collections.singletonList(topic));
+
+    }
+
+    public KafkaService(String groupId, Pattern topic, ConsumerFunction parse, Class<T> type, Map<String, String> properties) {
+        this(parse, groupId, type, properties);
+        consumer.subscribe(topic);
+    }
+
+    public KafkaService(ConsumerFunction parse, String groupId, Class<T> type, Map<String, String> properties) {
+        this.parse = parse;
+        this.consumer = new KafkaConsumer<>(getProperties(type, groupId, properties));
 
     }
 
@@ -43,17 +55,15 @@ public class KafkaService implements Closeable {
         }
     }
 
-    private static Properties properties(String groupId) {
+    private Properties getProperties(Class<T> type, String groupId, Map<String, String> overriderProperties) {
         var properties = new Properties();
-
-        //dentro do bloco while(truue) para rodar ate encontrar as mensagens
 
         //Onde está rodando o Kafka - ex:localhost:9092
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
 
         //Deserializado de byte para String
         properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
-        properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, GsonDeserializer.class.getName());
 
         //Corrção InvalidropExceptions
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupId);
@@ -64,6 +74,10 @@ public class KafkaService implements Closeable {
         //Consumir mensagens 1 em 1 - Configurar no docker
         properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
 
+        //Deserializer
+        properties.setProperty(GsonDeserializer.TYPE_CONFIG, type.getName());
+
+        properties.putAll(overriderProperties);
         return properties;
     }
 

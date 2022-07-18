@@ -11,7 +11,6 @@ public class NewOrderMain {
         try (var orderDispatcher = new KafkaDispatcher<Order>()) {
             try (var emailDispatcher = new KafkaDispatcher<String>()) {
 
-
                 //Teste enviar mensagem 10x - obs: numero de particões maior ou igual numero de consumidores detro de um grupo.
                 for (var i = 0; i < 10; i++) {
 
@@ -23,7 +22,6 @@ public class NewOrderMain {
                     var amount = new BigDecimal(Math.random() * 5000 + 1);
 
                     var order = new Order(userId, orderId, amount);
-
                     //Enviar dados para os Topicos abaixo;
                     orderDispatcher.send("ECOMMERCE_NEW_ORDER", userId, order);
 

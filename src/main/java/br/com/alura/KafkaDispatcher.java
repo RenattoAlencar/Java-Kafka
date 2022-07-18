@@ -46,7 +46,6 @@ public class KafkaDispatcher<T> implements Closeable {
         producer.send(record, callback).get();
     }
 
-
     @Override
     public void close() {
         producer.close();
