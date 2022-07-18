@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af69ccb-a292-4646-a081-8ccb7e0d4219" name="Changes" comment="enviando 100 mensagens para particões diferentes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/ConsumerFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/KafkaDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/KafkaService.java" afterDir="false" />
+    <list default="true" id="4af69ccb-a292-4646-a081-8ccb7e0d4219" name="Changes" comment="Refatoração de codigo, fechamento de portas e tratamentos">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/GsonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/FraudDetectorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/FraudDetectorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/LogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/KafkaDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/KafkaDispatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/alura/NewOrderMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/alura/NewOrderMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +47,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.alura" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="br.com.alura" />
     </key>
@@ -174,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658095171543</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refatoração de codigo, fechamento de portas e tratamentos">
+      <created>1658109111509</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1658109111509</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +202,7 @@
     <MESSAGE value="Varios consumdores, produtores e LOG ouvindo os Topicos." />
     <MESSAGE value="Subindo Kafka com 3 topicos" />
     <MESSAGE value="enviando 100 mensagens para particões diferentes." />
-    <option name="LAST_COMMIT_MESSAGE" value="enviando 100 mensagens para particões diferentes." />
+    <MESSAGE value="Refatoração de codigo, fechamento de portas e tratamentos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refatoração de codigo, fechamento de portas e tratamentos" />
   </component>
 </project>
